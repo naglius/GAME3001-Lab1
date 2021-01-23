@@ -91,7 +91,7 @@ void PlayScene::GUI_Function() const
 	}
 
 
-	static float angleInRadians = m_pSpaceShip->getRotation;
+	static float angleInRadians = m_pSpaceShip->getRotation();
 	if (ImGui::SliderAngle("Orientation Angle", &angleInRadians))
 	{
 		m_pSpaceShip->setRotation(angleInRadians * Util::Rad2Deg);

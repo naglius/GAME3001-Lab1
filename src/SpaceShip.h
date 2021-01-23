@@ -23,6 +23,8 @@ public:
 	void setMaxSpeed(float speed);
 	void setOrientation(glm::vec2 orientation);
 	void setRotation(float angle);
+	float getRotation() const;
+	
 
 private:
 

@@ -24,10 +24,9 @@ SpaceShip::~SpaceShip()
 
 void SpaceShip::draw()
 {
-	TextureManager::Instance()->draw("spaceship", 
-		getTransform()->position.x, getTransform()->position.y, 0, 255, true);
+	TextureManager::Instance()->draw("spaceship", getTransform()->position.x, getTransform()->position.y, m_rotationAngle, 255, true);
 
-	Util::DrawLine(getTransform()->position, (getTransform()->position + m_orientation) * 60.0f); //Draw a line from where the ship is pointed to
+	Util::DrawLine(getTransform()->position, (getTransform()->position + m_orientation * 60.0f) ); //Draw a line from where the ship is pointed to
 }
 
 void SpaceShip::update()
@@ -54,12 +53,16 @@ void SpaceShip::setOrientation(glm::vec2 orientation)
 	m_orientation = orientation;
 }
 
-void SpaceShip::setRotation(float angle);
+void SpaceShip::setRotation(float angle)
 {
 	m_rotationAngle = angle;
 }
 
-float SpaceShip::
+float SpaceShip::getRotation() const
+{
+	return m_rotationAngle;
+}
+
 
 void SpaceShip::m_Move()
 {
